@@ -1,0 +1,11 @@
+import java.io.IOException;
+import java.util.Scanner;
+public class gutentag {
+
+	public static void main(String[] args) {
+		double butt=1,trutt;
+		trutt=butt/4;
+		
+	}
+
+}

@@ -1,0 +1,7 @@
+import java.util.Random;
+public class rpc {
+	public static void RPC(){
+		Random random = new Random()
+		;
+	}
+}

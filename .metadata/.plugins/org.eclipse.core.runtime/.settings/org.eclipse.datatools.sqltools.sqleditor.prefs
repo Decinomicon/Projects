@@ -1,0 +1,11 @@
+Double\ quoted\ string=0,0,0,0,0,0,0,255
+Identifier=0,0,0,0,0,0,204,0
+Keyword=0,0,0,0,0,255,255,0
+Multi-line\ comment=0,0,0,0,0,199,221,12
+Others=0,0,0,0,0,255,255,0
+Single\ quoted\ string=0,0,0,0,0,0,0,255
+Single-line\ comment=0,0,0,0,0,199,221,12
+TerminalPrefInvertColors=true
+Type=0,0,0,0,0,0,204,0
+eclipse.preferences.version=1
+overriddenByCSS=,TerminalPrefInvertColors,

@@ -1,0 +1,240 @@
+import java.util.*;
+public class unamed {
+static int hp,maxHp,armr,attk,armrID,wpnID,once=0,towny=0,spellDUR,spellSlot1,spellSlot2,spellSlot3;
+static String name="";
+static int monsterHP,monsterATTK,monsterARMR,spell1Uses,spell2Uses,spell3Uses;
+static String monsterName,spellName1,spellName2,spellName3;
+static boolean spellEFF=false;
+static int spellFAIL=0;
+static int spell1Dmg, spell2Dmg, spell3Dmg;
+
+	public static void main(String[] args) {
+		Scanner inputInt=new Scanner(System.in);
+		Scanner inputString=new Scanner(System.in);
+		System.out.println("Welcome to the unamed adventure, choose a class");
+		int sure=2;
+		do{
+		int classSelect=0;
+		
+		do{	System.out.println("Classes:(1)Ork, (2)Elf, (3)Human");
+			classSelect=inputInt.nextInt();
+			switch(classSelect){
+			case 1:
+				System.out.println("Ork:");
+				System.out.println("HP: 30");
+				System.out.println("Attack: 6");
+				System.out.println("Armor: 4");
+				System.out.println("starting spell: Rage");
+				System.out.println("Do you want this class?(1)Yes, (2)No");
+				sure=inputInt.nextInt();
+					if(sure==1){
+						hp=30; maxHp=30; armr=4; spell1Uses=1; attk=6;spellSlot1=1;spellName1="Rage";
+					}
+				break;
+			case 2:
+				System.out.println("Elf:");
+				System.out.println("HP: 20");
+				System.out.println("Attack: 3");
+				System.out.println("Armor: 1");
+				System.out.println("starting spell: Fireball");
+				System.out.println("Do you want this class?(1)Yes, (2)No");
+				sure=inputInt.nextInt();
+					if(sure==1){
+						hp=20; maxHp=20; armr=1; spell1Uses=2;attk=3;spellSlot1=2;spellName1="Fireball";
+					}
+				break;
+			case 3:
+				System.out.println("Human:");
+				System.out.println("HP: 30");
+				System.out.println("Attack: 4");
+				System.out.println("Armor: 2");
+				System.out.println("starting spell: Magic Missle");
+				System.out.println("Do you want this class?(1)Yes, (2)No");
+				sure=inputInt.nextInt();
+					if(sure==1){
+						hp=30; maxHp=30; armr=2; spell1Uses=4; attk=4;spellSlot1=3;spellName1="Magic Missle";
+					}
+				break;
+			}
+		
+		}while(classSelect<1||classSelect>3);
+		
+		}while(sure==2);
+		System.out.println("What is your adventurers name?");
+		String name69=inputString.nextLine();
+		name=name69;
+		while(true){
+			
+			if(once==towny){
+				towny=once+5;
+				town();
+			}
+			once++;
+			dprsdSkeletons();
+			
+		}
+
+	}
+	
+	static void dprsdSkeletons(){
+		Scanner input=new Scanner(System.in);
+		 int action;
+		 monsterHP=10; monsterATTK=4; monsterARMR=2;
+		 monsterName="Depressed Skeleton";
+	System.out.println(name+" encountered a Depressed Skelleton");
+	while(monsterHP>0){
+	
+	do{	
+			
+			spellFAIL=1;
+		System.out.println(monsterName+" HP: "+monsterHP);
+		System.out.println("What does "+name+" do?");
+		System.out.println("(1)Attack, (2)Use Spell: Uses: ");
+		action=input.nextInt();
+	}while(action<1||action>2);
+		
+		if(action==1){
+			heroAttack();
+		}
+		else if(action==2){
+			spellUse();
+		}
+		
+		if(monsterHP>0){
+			monsterAttack();
+			if(hp<=0){
+				death();
+			}
+		}
+	
+		}
+	
+	}
+
+	static void town(){
+		Scanner input=new Scanner(System.in);
+		Random random=new Random();
+		int namePart1=random.nextInt(5);
+		int namePart2=random.nextInt(7);
+		String name1="";
+		String name2="";
+		switch(namePart1){
+		case 0:
+			name1="Hrath";
+			break;
+		case 1:
+			name1="Dang";
+			break;
+		case 2:
+			name1="Hog";
+			break;
+		case 3:
+			name1="Vroom";
+			break;
+		case 4:
+			name1="Gang";
+			break;
+		}
+		switch(namePart2){
+		case 0:
+			name2="town";
+			break;
+		case 1:
+			name2="ville";
+			break;
+		case 2:
+			name2="topia";
+			break;
+		case 3:
+			name2="burg";
+			break;
+		case 4:
+			name2="land";
+			break;
+		case 5:
+			name2="shire";
+			break;
+		case 6:
+			name2="bang";
+			break;
+		}
+		int townSelect;
+		do{
+		System.out.println(name+" is in the town of "+name1+name2);
+		System.out.println("What does "+name+" do?");
+		System.out.println("(1)Leave");
+		townSelect=input.nextInt();
+		}while(townSelect!=1);
+		
+	
+	}
+
+	static void death(){
+		System.out.println(name+" has dies");
+		System.out.println("The end");
+		System.exit(0);
+	}
+
+	static void heroAttack(){
+		Scanner input = new Scanner(System.in);
+		double dmg=attk*(monsterARMR/10.0);
+		int attkRed=(int)Math.round(dmg);
+		int damageTot=0;
+		damageTot=attk-attkRed;
+		if(spellEFF=true&&spellDUR>0){
+			damageTot=(int) (damageTot*1.5);
+			spellDUR--;
+			System.out.println(spellDUR);
+			if(spellDUR==0){
+				spellEFF=false;
+				System.out.println("The spell is fading");
+				System.out.println("Enter any number to continue...");
+				int cont = input.nextInt();
+			}
+		}
+		monsterHP=monsterHP-damageTot;
+		System.out.println("The "+monsterName+ " took "+damageTot+" damage");
+		System.out.println(monsterName+" HP: "+monsterHP);
+		System.out.println("Enter any number to continue...");
+		int cont1 = input.nextInt();
+	}
+
+	static void monsterAttack(){
+		Scanner input = new Scanner(System.in);
+		System.out.println("The "+monsterName+" Attacks!");
+		double dmg=monsterATTK*(armr/10.0);
+		int attkRed=(int)Math.round(dmg);
+		int damageTot=0;
+		damageTot=monsterATTK-attkRed;
+		hp=hp-damageTot;
+		System.out.println(name+" took "+damageTot+" damage");
+		System.out.println("HP:"+hp);
+		System.out.println("Enter any number to continue...");
+		int cont = input.nextInt();
+	}
+
+	static void spellUse(){
+		Scanner input = new Scanner(System.in);
+		System.out.println("Choose your spell");
+		if(spellSlot1>0){
+			System.out.println(spellName1+" Uses: "+spell1Uses);
+		}
+		if(spellSlot2>0){
+			System.out.println(spellName2+" Uses: "+spell2Uses);
+		}
+		if(spellSlot3>0){
+			System.out.println(spellName3+" Uses: "+spell3Uses);
+		}
+		System.out.println("(1)"+spellName1);
+		if(spellSlot2>0){
+			System.out.print("(2)"+spellName2);
+		}
+		if(spellSlot3>0){
+			System.out.print("(3)"+spellName3);
+		}
+		int spellChoice=input.nextInt();
+		if(spellChoice==1){
+			
+		}
+	}
+}

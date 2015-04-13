@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class exact {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		int price, twenty, ten, five, one, totBills;
+		System.out.println("What is the price?");
+		price=input.nextInt();
+		System.out.println("How many twenties do you have?");
+		twenty=input.nextInt();
+		System.out.println("How many tens do you have?");
+		ten=input.nextInt();
+		System.out.println("How many fives do you have?");
+		five=input.nextInt();
+		System.out.println("How many ones do you have?");
+		one=input.nextInt();
+		boolean c = false;
+		totBills=twenty+ten+five+one;
+		do{
+			
+		}while(c = false);
+
+	}
+
+}

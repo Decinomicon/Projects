@@ -1,0 +1,11 @@
+TerminalPrefInvertColors=true
+dtdComment=\#C7DD0C | null | null | false | null | null
+dtdData=\#FFFF00 | null | null | null | null | null
+dtdDefault=\#FFFF00 | null | null | null | null | null
+dtdKeyword=\#FFFF00 | null | false | null | null | null
+dtdString=\#0000FF | null | null | null | null | null
+dtdSymbol=\#0000FF | null | null | null | null | null
+dtdTag=\#0000FF | null | null | null | null | null
+dtdTagName=\#0000FF | null | null | null | null | null
+eclipse.preferences.version=1
+overriddenByCSS=,TerminalPrefInvertColors,

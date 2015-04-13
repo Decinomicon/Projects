@@ -1,0 +1,101 @@
+import java.util.Random;
+
+public class namer {
+
+	public static void main(String[] args) {
+		Random random = new Random();
+		int cons, vowel,times=0;
+		String consonet = "", vowels = "", name = "";
+		for (int i = 1; i < 4; i++) {
+			cons = random.nextInt(21);
+			vowel = random.nextInt(4);
+			times++;
+			if (cons == 0) {
+				consonet = "b";
+			}
+			if (cons == 1) {
+				consonet = "c";
+			}
+			if (cons == 2) {
+				consonet = "d";
+			}
+			if (cons == 3) {
+				consonet = "f";
+			}
+			if (cons == 4) {
+				consonet = "g";
+			}
+			if (cons == 5) {
+				consonet = "h";
+			}
+			if (cons == 6) {
+				consonet = "j";
+			}
+			if (cons == 7) {
+				consonet = "k";
+			}
+			if (cons == 8) {
+				consonet = "l";
+			}
+			if (cons == 9) {
+				consonet = "m";
+			}
+			if (cons == 10) {
+				consonet = "n";
+			}
+			if (cons == 11) {
+				consonet = "p";
+			}
+			if (cons == 12) {
+				consonet = "q";
+			}
+			if (cons == 13) {
+				consonet = "r";
+			}
+			if (cons == 14) {
+				consonet = "s";
+			}
+			if (cons == 15) {
+				consonet = "t";
+			}
+			if (cons == 16) {
+				consonet = "v";
+			}
+			if (cons == 17) {
+				consonet = "w";
+			}
+			if (cons == 18) {
+				consonet = "x";
+			}
+			if (cons == 19) {
+				consonet = "y";
+			}
+			if (cons == 20) {
+				consonet = "z";
+			}
+			name = name + consonet;
+			if(times==1||times==2){
+			if (vowel == 0) {
+				vowels = "a";
+			}
+			if (vowel == 1) {
+				vowels = "e";
+			}
+			if (vowel == 2) {
+				vowels = "i";
+			}
+			if (vowel == 3) {
+				vowels = "o";
+			}
+			if (vowel == 4) {
+				vowels = "u";
+			}
+			name = name + vowels;
+			times=0;
+		}
+		}
+		System.out.println(name);
+
+	}
+
+}

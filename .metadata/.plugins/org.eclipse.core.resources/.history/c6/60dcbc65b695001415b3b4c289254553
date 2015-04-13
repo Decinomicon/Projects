@@ -1,0 +1,81 @@
+import java.util.Random;
+public class namer {
+
+	public static void main(String[] args) {
+		Random random = new Random();
+		int cons, vowel;
+		String consonet, vowels, name="";
+		cons = random.nextInt(21);
+		vowel = random.nextInt(4);
+		
+		if (cons == 0) {
+			
+		}
+		if (cons == 1) {
+			
+		}
+		if (cons == 2) {
+			
+		}
+		if (cons == 3) {
+		
+		}
+		if (cons == 4) {
+			
+		}
+		if (cons == 5) {
+			
+		}
+		if (cons == 6) {
+			
+		}
+		if (cons == 7) {
+			
+		}
+		if (cons == 8) {
+			
+		}
+		if (cons == 9) {
+			
+		}
+		if (cons == 10) {
+			
+		}
+		if (cons == 11) {
+			
+		}
+		if (cons == 12) {
+			
+		}
+		if (cons == 13) {
+			
+		}
+		if (cons == 14) {
+			
+		}
+		if (cons == 15) {
+			
+		}
+		if (cons == 16) {
+			
+		}
+		if (cons == 17) {
+			
+		}
+		if (cons == 18) {
+			
+		}
+		if (cons == 19) {
+			
+		}
+		if (cons == 20) {
+			
+		}
+		if (cons == 21) {
+			
+		}
+		
+
+	}
+
+}

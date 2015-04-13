@@ -1,0 +1,12 @@
+import java.io.PrintWriter;
+import java.util.*;
+public class serverBlade {
+
+	public static void main(String[] args) {
+		String fileIn="runData", fileOut="log";
+		PrintWriter outputStream=null;
+		Scanner load = null;
+
+	}
+
+}

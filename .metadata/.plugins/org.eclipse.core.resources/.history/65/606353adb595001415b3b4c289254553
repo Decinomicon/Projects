@@ -1,0 +1,16 @@
+import java.util.Random;
+public class namer {
+
+	public static void main(String[] args) {
+		Random random = new Random();
+		int cons, vowel;
+		cons = random.nextInt(21);
+		vowel = random.nextInt(4);
+		
+		switch(cons){
+		
+		}
+
+	}
+
+}

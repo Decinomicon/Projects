@@ -1,0 +1,76 @@
+package my_first_GUI;
+
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
+
+import javax.swing.JFrame;
+
+public class GUI extends Canvas implements Runnable {
+	Thread mainThread;
+
+	public static void main(String[] args) {
+		GUI myFirst = new GUI();
+		JFrame frame = new JFrame("My first gui");
+		Dimension word = new Dimension(500, 500);
+		frame.setMaximumSize(word);
+		frame.setPreferredSize(word);
+		frame.setMinimumSize(word);
+		frame.setResizable(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.add(myFirst);
+		frame.pack();
+		myFirst.start();
+
+	}
+
+	public void run() {
+		while(true){
+			render();
+		}
+
+	}
+
+	public void render() {
+		BufferStrategy bs = this.getBufferStrategy();
+		if (bs == null) {
+			createBufferStrategy(3);
+			return;
+		}
+		Graphics g = bs.getDrawGraphics();
+		g.setColor(Color.yellow);
+		g.fillOval(150, 150, 200, 200);
+		g.setColor(Color.black);
+		g.fillOval(200, 200, 30, 30);
+		g.fillOval(275, 200, 30, 30);
+		g.fillOval(195, 240, 115, 90);
+		g.setColor(Color.yellow);
+		g.fillOval(195, 240, 115, 80);
+		g.setColor(Color.black);
+		int xPoints[] = {304,310,328,321};
+		int yPoints[] = {280,271,288,295};
+		int nPoints = 4;
+		g.fillPolygon(xPoints, yPoints, nPoints);
+		g.dispose();
+		bs.show();
+	}
+
+	public void start() {
+		if (mainThread == null) {
+			mainThread = new Thread(this);
+			mainThread.start();
+		}
+	}
+
+	public void stop() {
+		try {
+			mainThread.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
